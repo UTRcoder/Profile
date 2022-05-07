@@ -1,0 +1,906 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,500;1,700;1,900&family=Ubuntu:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+input[type="checkbox"] {
+  position: fixed;
+  z-index: 9999;
+  top: 30px;
+  left: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+  width: 20px;
+  height: auto;
+  -webkit-appearance: none;
+  color: white;
+}
+input[type="checkbox"]:before {
+  content: url("sun-solid.svg");
+  background: rgb(255, 255, 255);
+  font-size: 30px;
+  border-radius:20%;
+  padding: 4px;
+  transition: all 1s ease;
+}
+input[type="checkbox"]:checked:before {
+  content: url("moon-solid.svg");
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+}
+input[type="checkbox"]:checked ~ * {
+  color: white;
+  background: black;
+  transition: all 2s ease;
+}
+
+input[type="checkbox"]:checked ~ .contact form .fields input {
+  transition: all 2s ease;
+  color: white;
+  background: black;
+}
+input[type="checkbox"]:checked ~ .contact form .fields .textarea textarea {
+  transition: all 2s ease;
+  color: white;
+  background: black;
+}
+
+input[type="checkbox"]:checked ~ .contact .title:after {
+  background: black;
+}
+input[type="checkbox"]:checked ~ .skills .title:after {
+  background: black;
+}
+input[type="checkbox"]:checked ~ .about .about-me:after {
+  background: black;
+}
+input[type="checkbox"]:checked ~ .contact .title:before {
+  background: rgb(255, 255, 255);
+}
+input[type="checkbox"]:checked ~ .skills .title:before {
+  background: rgb(255, 255, 255);
+}
+input[type="checkbox"]:checked ~ .about .about-me:before {
+  background: rgb(255, 255, 255);
+}
+input[type="checkbox"]:checked ~ .contact form {
+  transition: all 2s ease-out;
+  background: rgb(0, 0, 0);
+}
+/* ********************************************navigation bar styling********************************************* */
+.nav {
+  position: fixed;
+  width: 100%;
+  padding: 20px 18px;
+  font-family: "ubuntu", sens-serif;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+.nav.sticky {
+  padding: 0 18px;
+  background: red;
+}
+.nav .width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.width {
+  max-width: 1300px;
+  padding: 20px 50px;
+  margin: auto;
+}
+.nav .logo a {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+.nav.sticky .logo a {
+  color: rgb(255, 255, 255);
+}
+
+.nav .logo span {
+  color: red;
+  transition: all 0.5 ease;
+}
+.nav.sticky .logo span {
+  color: white;
+}
+.nav .menu li {
+  list-style: none;
+  display: inline-block;
+}
+
+.nav .menu li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: all 0.5s ease;
+}
+.nav .menu li a:hover {
+  color: white;
+  /* transform: scale(1.2); */
+  font-size: 20px;
+}
+.nav .logo img {
+  height: 50px;
+  width: 50px;
+}
+.menu-btn {
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+}
+/****************************************** home part***************************************************************/
+.home {
+  position: inherit;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  background: url("homecover3.jpg") no-repeat center;
+  height: 100vh;
+  color: white;
+  min-height: 500px;
+  animation: neeraj 15s infinite ease;
+}
+
+.home .width {
+  margin: auto 50px auto 40px;
+}
+.home .content {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: none solid rgba(255, 255, 255, 0.5);
+}
+.home .content .text2 {
+  font-size: 70px;
+  font-weight: 600;
+  margin-left: -4px;
+}
+.home .content .text1 {
+  font-size: 27px;
+}
+.home .content .text3 {
+  margin: 4px 0;
+  font-size: 40px;
+}
+.home .content .text3 span {
+  color: red;
+  font-weight: 800;
+  font-size: 50px;
+}
+.wrapper .button {
+  display: inline;
+  height: 60px;
+  width: 60px;
+  margin: 5px 5px;
+  overflow: hidden;
+  float: left;
+  background: white;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 1s ease;
+}
+.wrapper .button:hover {
+  width: 200px;
+}
+.wrapper .button .icon {
+  color: black;
+  font-size: 10px;
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  border-radius: 52px;
+  line-height: 60px;
+  box-sizing: border-box;
+}
+.wrapper .button .icon i {
+  font-size: 20px;
+  line-height: 60px;
+}
+.wrapper .button span {
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  line-height: 60px;
+  margin-left: 10px;
+  color: black;
+}
+.wrapper .button:nth-child(1):hover .icon {
+  background: crimson;
+}
+.wrapper .button:nth-child(2):hover .icon {
+  background: blue;
+}
+.wrapper .button:nth-child(3):hover .icon {
+  background: rgb(20, 123, 163);
+}
+.wrapper .button:nth-child(4):hover .icon {
+  background: green;
+}
+.wrapper .button:nth-child(1):hover span {
+  color: crimson;
+}
+.wrapper .button:nth-child(2):hover span {
+  color: blue;
+}
+.wrapper .button:nth-child(3):hover span {
+  color: rgb(20, 123, 163);
+}
+.wrapper .button:nth-child(4):hover span {
+  color: green;
+}
+.wrapper .button:hover .icon i {
+  color: white;
+}
+@keyframes neeraj {
+  0% {
+    background: url("homecover.jpg") no-repeat center;
+  }
+  50% {
+    background: url("hom.jpg") no-repeat center;
+  }
+  75% {
+    background: url("homecover2.jpg") no-repeat center;
+  }
+}
+/************************************** about section styling****************************************************  */
+section {
+  padding: 80px 0;
+}
+
+.about,
+.services,
+.skills,
+.sigma .contact {
+  font-family: "poppins", sans-serif;
+}
+.about .about-me {
+  font-family: "ubuntu", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.about .about-me:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  /* bottom:0px; */
+  width: 400px;
+  height: 3px;
+  margin-top: 68px;
+  background: black;
+  transform: translate(-50%);
+}
+.about .about-me:after {
+  content: "watch me";
+  position: absolute;
+  left: 50%;
+  font-size: 20px;
+  padding: 5px;
+  background: white;
+  color: crimson;
+  transform: translate(-50%);
+  border-radius: 10px;
+}
+.about .about-content,
+.services .serv-content,
+.skills .skill-content,
+.contact .contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.about .about-content .left img {
+  height: 350px;
+  width: 350px;
+  display: flex;
+
+  object-fit: cover;
+  border-radius: 8px;
+}
+.about .about-content .right {
+  width: 55%;
+}
+.about .about-content .right .text {
+  font-size: 35px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.about .about-content .right .text span {
+  color: crimson;
+}
+.about .about-content .right p {
+  text-align: justify;
+  font-size: 18px;
+}
+.about .about-content .right a {
+  text-decoration: none;
+  font-size: 25px;
+  background: linear-gradient(crimson, rgba(255, 255, 255, 0.5));
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  transition: all 1.2s ease;
+}
+.about .about-content .right a:hover {
+  background: none;
+  border: 2px solid crimson;
+  color: red;
+  font-weight: 700;
+  font-size: 23px;
+  margin-left: 7px;
+}
+/* ************************************service section styling**************************************************** */
+.services {
+  background-color: rgba(0, 0, 0);
+  color: white;
+  z-index: 40;
+}
+.services .title {
+  font-family: "ubuntu", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.services .title:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  /* bottom:0px; */
+  width: 400px;
+  height: 3px;
+  margin-top: 68px;
+  background: rgb(255, 255, 255);
+  transform: translate(-50%);
+}
+.services .title:after {
+  content: "illustrated";
+  position: absolute;
+  left: 50%;
+  font-size: 20px;
+  padding: 5px;
+  /* background:white; */
+  color: crimson;
+  background-color: rgba(0, 0, 0);
+  transform: translate(-50%);
+}
+.services .serv-content .card {
+  width: calc(22% - 10px);
+  background: rgba(255, 250, 250, 0.1);
+  margin: 10px;
+  text-align: center;
+  border-radius: 12px;
+  padding: 30px;
+  transition: all 5s ease;
+}
+.services .serv-content .card span {
+  color: red;
+}
+
+.services .serv-content .card .box .cont {
+  display: none;
+  justify-content: center;
+  transition: all 5s ease;
+}
+
+.services .serv-content .card:hover .box .cont {
+  display: block;
+  opacity: 50%;
+}
+
+.services .serv-content .card .box i {
+  font-size: 35px;
+}
+.services .serv-content .card .text {
+  font-size: 20px;
+  text-align: center;
+}
+/************************************************ skills syling starts  *******************************************/
+.skills {
+  position: static;
+  animation: skill 2s infinite ease;
+}
+@keyframes skills {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 50px;
+  }
+  50% {
+    top: 0px;
+  }
+}
+.skills .title {
+  font-family: "ubuntu", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.skills .title:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  /* bottom:0px; */
+  width: 400px;
+  height: 3px;
+  margin-top: 68px;
+  background: rgb(0, 0, 0);
+  transform: translate(-50%);
+}
+.skills .title:after {
+  content: "What I Build";
+  position: absolute;
+  left: 50%;
+  font-size: 20px;
+  padding: 5px;
+  /* background:white; */
+  color: crimson;
+  background-color: rgb(255, 250, 250);
+  transform: translate(-50%);
+  border-radius: 10px;
+}
+.skills .skill-content .column {
+  width: calc(50% - 30px);
+}
+
+.skills .skill-content .column a {
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 450;
+  background-color: rgb(235, 28, 69);
+  color: white;
+  border-radius: 7px;
+  padding: 1.1%;
+  transition: all 1s ease;
+}
+.skills .skill-content .column a:hover {
+  background: none;
+  border: red 2px solid;
+  color: red;
+  font-size: 23px;
+  font-weight: 700;
+}
+.skills .skill-content .left .text {
+  font-size: 27px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.skills .skill-content p {
+  text-align: justify;
+}
+.skills .skill-content .right .bars {
+  margin-bottom: 15px;
+}
+.skills .skill-content .right .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.skills .skill-content .right span {
+  font-weight: 500;
+  font-size: 20px;
+}
+.skills .skill-content .right .line {
+  height: 5px;
+  width: 100%;
+  background: grey;
+  position: relative;
+}
+.skills .skill-content .right .line::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 80%;
+  background: crimson;
+}
+.skills .skill-content .right .html::before {
+  width: 40%;
+}
+.skills .skill-content .right .css::before {
+  width: 30%;
+}
+.skills .skill-content .right .js::before {
+  width: 20%;
+}
+.skills .skill-content .right .python::before {
+  width: 40%;
+}
+
+/************************************sigma section styling********************************************************  */
+
+section {
+  padding: 80px 0;
+}
+.sigma {
+  background-color: black;
+  color: white;
+}
+.sigma .title {
+  font-family: "ubuntu", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.sigma .title:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  /* bottom:0px; */
+  width: 400px;
+  height: 3px;
+  margin-top: 68px;
+  background: rgb(255, 255, 255);
+  transform: translate(-50%);
+}
+.sigma .title:after {
+  content: "My Reach";
+  position: absolute;
+  left: 50%;
+  font-size: 20px;
+  padding: 5px;
+  /* background:white; */
+  color: crimson;
+  background-color: rgb(0, 0, 0);
+  transform: translate(-50%);
+}
+
+.sigma .carousel .card {
+  background-color: rgba(255, 255, 255, 0.1);
+  /* border-radius: 15px; */
+  padding: 30px 30px;
+  transition: all 0.5s ease;
+}
+.sigma .carousel .card:hover {
+  background-color: crimson;
+  border-radius: 20px;
+  color: white;
+}
+
+.sigma .carousel .card .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+}
+
+.sigma .carousel .card img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: solid red 3px;
+  margin-bottom: 5%;
+  transition: all 0.9s ease;
+}
+.sigma .carousel .card:hover img {
+  border: rgb(255, 255, 255) 3px solid;
+  transform: scale(1.1);
+  box-shadow: 0px 4px 1px rgba(0, 0, 0, 0.5), 0px 7px 2px rgba(0, 0, 0, 0.3),
+    0px 11px 3px rgba(0, 0, 0, 0.2);
+}
+.sigma .carousel .card .box .text {
+  font-size: 25px;
+  font-weight: 500;
+  color: crimson;
+  transition: all 0.9s ease;
+}
+.sigma .carousel .card:hover .box .text {
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+  transform: scale(1.1);
+}
+.owl-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+.owl-dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 4px;
+  outline: none !important;
+  border-radius: 50%;
+  border: 2px solid crimson !important;
+  transition: all 0.5s ease;
+}
+.owl-dot.active {
+  width: 50px;
+  border-radius: 10px;
+}
+.owl-dot.active,
+.owl-dot:hover {
+  background: crimson !important;
+}
+
+/* ***********************************************contact section styling******************************************/
+.contact .title {
+  font-family: "ubuntu", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.contact .title:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  /* bottom:0px; */
+  width: 400px;
+  height: 3px;
+  margin-top: 68px;
+  background: black;
+  transform: translate(-50%);
+}
+.contact .title:after {
+  content: "shrink the distance";
+  position: absolute;
+  left: 50%;
+  font-size: 20px;
+  padding: 5px;
+  background: white;
+  color: crimson;
+  transform: translate(-50%);
+  border-radius: 10px;
+}
+.contact .contact-content .column {
+  width: calc(50% - 30px);
+}
+.contact .contact-content .text {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.contact .contact-content .left p {
+  text-align: justify;
+}
+.contact .contact-content .left .icon {
+  margin: 10px 0;
+}
+.contact .contact-content .row {
+  display: flex;
+  height: 65px;
+  align-items: center;
+}
+.contact .contact-content .left .icon .info {
+  margin-left: 15px;
+}
+.contact .contact-content .row i {
+  font-size: 25px;
+  color: red;
+}
+.contact .contact-content .info .head {
+  font-size: larger;
+  font-weight: 800;
+}
+.contact .contact-content .left .icon .info .sub-title {
+  font-size: 17px;
+}
+.contact form {
+  /* margin-left:20%;  */
+  background-color: rgb(255, 255, 255);
+  margin-left: 150px;
+}
+.contact form .fields input {
+  width: 186px;
+  height: 30px;
+  margin: 5px;
+  padding: 4px;
+  border-radius: 7px;
+  /* background-color:#ff0000; */
+  border: 2px solid rgba(235, 28, 69, 0.5);
+}
+.contact form .fields .field input {
+  width: 400px;
+}
+
+.contact form .fields .textarea textarea {
+  width: 400px;
+  margin: 5px;
+  padding: 4px;
+  border-radius: 7px;
+  border: 2px solid rgba(235, 28, 69, 0.5);
+}
+.contact form .fields .buttons button {
+  height: 40px;
+  width: 200px;
+  border-radius: 7px;
+  background-color: crimson;
+  color: white;
+  font-weight: 700;
+  margin-left: 4px;
+}
+.contact form .fields .buttons button:hover {
+  background-color: rgb(126, 5, 5);
+}
+/* ************************************media query section****************************************************** */
+@media (max-width: 1160px) {
+  .width {
+    padding: 0 50px;
+  }
+  .menu-btn {
+    display: block;
+    z-index: 999;
+  }
+  .menu-btn i.active:before {
+    content: "\f00d";
+  }
+  .nav .menu {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: -100%;
+    top: 0;
+    background-color: black;
+    text-align: center;
+    /* padding-top: 80px; */
+    transition: all 0.3s ease;
+  }
+  .nav .menu.active {
+    left: 0;
+  }
+  .nav .menu li {
+    display: block;
+    margin-top: 45px;
+    animation: alldown 2s 2 ease;
+  }
+  .nav .menu li a {
+    font-size: 25px;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  .home .content {
+    backdrop-filter: none;
+  }
+  .nav .menu li a:hover {
+    color: crimson;
+  }
+  .home .content .text2 {
+    font-size: 65px;
+  }
+  .home .content .text3 {
+    font-size: 35px;
+  }
+  .home .content .text3 span {
+    font-size: 35px;
+  }
+  .about .about-content .left img {
+    height: 350px;
+    width: 350px;
+  }
+  @keyframes alldown {
+    0% {
+      margin: 75px;
+    }
+    50% {
+      margin: 0px;
+    }
+
+    100% {
+      margin: 75px;
+    }
+  }
+}
+@media (max-width: 750px) {
+  .home .content .text2 {
+    font-size: 50px;
+  }
+  .home .content .text3 {
+    font-size: 32px;
+  }
+  .home .content .text3 span {
+    font-size: 32px;
+  }
+  .about .about-content .left img {
+    height: 270px;
+    width: 270px;
+  }
+  .about .about-content .right p {
+    text-align: justify;
+    /* margin-left:30%; */
+    font-size: 15px;
+  }
+  .about .about-content .column {
+    width: 50%;
+  }
+  .about .about-content .left {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 60px;
+  }
+  .about .about-content .right {
+    flex: 100%;
+  }
+  .services .serv-content .card,
+  .skills .skill-content .column,
+  .contact .contact-content .column,
+  .contact form .fields input,
+  .contact form .fields .field input,
+  .contact form .fields .textarea textarea 
+  {
+    width: 100%;
+    text-align: justify;
+  }
+  .skills .skill-content .bars {
+    margin-top: 20px;
+  }
+  input[type="checkbox"] {
+    width: 16px;
+    /* display: none; */
+  }
+  input[type="checkbox"]:checked ~ .contact form {
+    background: black;
+    margin-left: -50px;
+  }
+
+  .contact form {
+    background: rgb(255, 255, 255);
+    margin-left: -50px;
+    
+  }
+  .sigma .title:before,
+  .about .about-me:before,
+  .services .title:before,
+  .skills .title:before,
+  .contact .title:before
+
+  {
+    width:240px;
+  }
+}
+@media (max-width: 710px) {
+  .home .content .text2 {
+    font-size: 40px;
+  }
+  .home .content .text3 {
+    font-size: 25px;
+  }
+  .home .content .text3 span {
+    font-size: 25px;
+  }
+  .services .serv-content .card {
+    width: 100%;
+  }
+}
+@media (max-width: 550px) {
+  .home .content .text2 {
+    font-size: 35px;
+  }
+  .home .content .text3 {
+    font-size: 15px;
+  }
+  .home .content .text3 span {
+    font-size: 15px;
+  }
+}
+/* ************************************************************************************************************** */
